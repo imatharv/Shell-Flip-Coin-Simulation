@@ -29,7 +29,6 @@ done
 if [[ $headWinCounter -eq $tailWinCounter ]]
 then
 	echo "We have a tie. Rolling again..."
-
 	while [[ $(($headWinCounter-$tailWinCounter)) -lt 2 && $(($tailWinCounter-$headWinCounter)) -lt 2  ]]
 	do
    		flip=$((RANDOM%2))
