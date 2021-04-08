@@ -25,7 +25,7 @@ do
 	fi
 done
 
-#Use-case-3 Show if it’s a Win or Tie. If Win then who won and by how much
+#Use-case-3&4 Show if it’s a Win or Tie. If Win then who won and by how much
 if [[ $headWinCounter -eq $tailWinCounter ]]
 then
 	echo "We have a tie. Rolling again..."
