@@ -25,5 +25,5 @@ do
 	fi
 done
 
-echo Number of times HEAD won: $headWinCounter
-echo Number of times TAIL won: $tailWinCounter
+echo "Number of times HEAD won: $headWinCounter"
+echo "Number of times TAIL won: $tailWinCounter"
