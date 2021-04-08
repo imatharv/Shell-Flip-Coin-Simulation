@@ -8,36 +8,22 @@ function flipCoin(){
 	echo $result
 }
 
-#Use-case-2 Flipping a coin and storing it in a dictionary
-isHead=0
-isTail=1
-count=10
-headCount=0
-tailCount=0
+#Use-case-2 Flipping a coin and show number of times head and tail has won
+read -p "How many times do you want to flip a coin: " iteration
+headWinCounter=0
+tailWinCounter=0
 
-declare -A singlet
-
-for ((  i=0 ; i<count ; i++ ))
+for ((count=0;count<$iteration;count++))
 do
-	singlet[$i]=$( flipCoin )
-	if [[ singlet[$i] -eq isHead ]]
+	flip=$((RANDOM%2))
+
+	if [[ $flip -eq 1 ]]
 	then
-		(( headCount++ ))
-	elif [[ singlet[$i] -eq isTail ]]
-	then
-		(( tailCount++ ))
+		((headWinCounter++))
+	else
+		((tailWinCounter++))
 	fi
 done
-echo ${singlet[@]}
 
-#Function for calculating percentage
-function percentage(){
-	count=`echo "$1*0.1"|bc`
-	percent=`echo "$count*100"|bc`
-	echo $percent
-}
-
-singletHeadPercentage=$( percentage $headCount )
-echo $singletHeadPercentage
-singletTailPercentage=$( percentage $tailCount )
-echo $singletTailPercentage
+echo Number of times HEAD won: $headWinCounter
+echo Number of times TAIL won: $tailWinCounter
